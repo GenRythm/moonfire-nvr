@@ -29,9 +29,9 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 fn main() {
-    //let out_dir = std::path::PathBuf::from(std::env::var("OUT_DIR").expect("OUT_DIR"));
+    let out_dir = std::path::PathBuf::from(std::env::var("OUT_DIR").expect("OUT_DIR"));
     protobuf_codegen_pure::Args::new()
-        .out_dir(".")
+        .out_dir(out_dir)
         .inputs(&["proto/schema.proto"])
         .include("proto")
         .run()
